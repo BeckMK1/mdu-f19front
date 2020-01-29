@@ -3,7 +3,7 @@
 // declaring teacher objects
 
 // Birgitte
-let teacher1 = {
+let teachers = [{
   name: "Birgitte Kirk Iversen",
   initials: "bki",
   mail: "bki@baaa.dk",
@@ -12,10 +12,8 @@ let teacher1 = {
   position: "Senior Lecturer",
   department: "Multimedia Design",
   img: "https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg"
-};
-
-// Gertie
-let teacher2 = {
+},
+{
   name: "Gertie Margrethe Kolding Jensen",
   initials: "gkj",
   mail: "gkj@baaa.dk",
@@ -24,9 +22,9 @@ let teacher2 = {
   position: "Senior Lecturer",
   department: "Multimedia Design",
   img: "https://www.baaa.dk/media/iabpvdga/gertie-kolding.jpg"
-};
-
-let teacher3 = {
+},
+// Kim
+{
   name: "Kim Elkjær Marcher-Jepsen",
   initials: "kije",
   mail: "kije@baaa.dk",
@@ -35,9 +33,9 @@ let teacher3 = {
   position: "Lecturer",
   department: "Multimedia Design",
   img: "https://www.baaa.dk/media/3zihz21l/kim-elkjaer-marcher-jepsen.jpg"
-};
-
-let teacher4 = {
+},
+// Rasmus
+{
   name: "Rasmus Cederdorff",
   initials: "race",
   mail: "race@baaa.dk",
@@ -46,48 +44,21 @@ let teacher4 = {
   position: "Lecturer",
   department: "Programmes within Digital Communication and Multimedia",
   img: "https://www.baaa.dk/media/devlvvgj/rasmus-cederdorff.jpg"
+}
+];
+
+
+function appendteachers(teachers){
+for(let teacher of teachers){
+  document.querySelector("#grid-teachers").innerHTML +=`
+  <article>
+<img src='${teacher.img}'>
+  <h3> ${teacher.name}</h3>
+${teacher.position}<br>
+  <a href='mailto: ${teacher.mail}'> ${teacher.mail}</a>
+  </article>
+  `;
+}
 };
 
-// log objects to the developer console
-console.log(teacher1);
-console.log(teacher2);
-console.log(teacher3);
-console.log(teacher4);
-
-// Appending objects to the DOM
-
-// teacher1 - Birgitte
-document.querySelector("#grid-teachers").innerHTML +=
-  "<article>" +
-  "<img src='" + teacher1.img + "'>" +
-  "<h3>" + teacher1.name + "</h3>" +
-  teacher1.position + "<br>" +
-  "<a href='mailto:" + teacher1.mail + "'>" + teacher1.mail + "</a>" +
-  "</article>";
-
-//teacher2 - Gertie
-document.querySelector("#grid-teachers").innerHTML +=
-  "<article>" +
-  "<img src='" + teacher2.img + "'>" +
-  "<h3>" + teacher2.name + "</h3>" +
-  teacher2.position + "<br>" +
-  "<a href='mailto:" + teacher2.mail + "'>" + teacher2.mail + "</a>" +
-  "</article>";
-
-//teacher3 - Kim
-document.querySelector("#grid-teachers").innerHTML +=
-  "<article>" +
-  "<img src='" + teacher3.img + "'>" +
-  "<h3>" + teacher3.name + "</h3>" +
-  teacher3.position + "<br>" +
-  "<a href='mailto:" + teacher3.mail + "'>" + teacher3.mail + "</a>" +
-  "</article>";
-
-//teacher4 - Rasmus
-document.querySelector("#grid-teachers").innerHTML +=
-  "<article>" +
-  "<img src='" + teacher4.img + "'>" +
-  "<h3>" + teacher4.name + "</h3>" +
-  teacher4.position + "<br>" +
-  "<a href='mailto:" + teacher4.mail + "'>" + teacher4.mail + "</a>" +
-  "</article>";
+appendteachers(teachers);
