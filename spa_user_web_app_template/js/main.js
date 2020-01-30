@@ -115,17 +115,31 @@ function showDetailView(index){
   // navigateTo("detail-view");
 }
 function createUser(){
-  let name = document.querySelector('#addUser-form input [name=name]').value;
-  let age = document.querySelector('#addUser-form input [name=age]').value;
-  let address = document.querySelector('#addUser-form input [name=address]').value;
-
+  let name = document.querySelector('#addUser input[name=name]').value;
+  let age = document.querySelector('#addUser input[name=age]').value;
+  let address = document.querySelector('#addUser input[name=address]').value;
+  let city = document.querySelector('#addUser input[name=city]').value;
+  let country = document.querySelector('#addUser input[name=country]').value;
+  let gender = document.querySelector('#addUser input[name=gender]').value;
+  let email = document.querySelector('#addUser input[name=email]').value;
+  let picture = document.querySelector('#addUser input[name=img]').value;
+  let phone = document.querySelector('#addUser input[name=phone]').value;
 let newUser = {
 name: name,
 age: age,
-address: address
+address: address,
+city: city,
+contry: country,
+gender: gender,
+email: email,
+picture: picture,
+phone: phone
 };
-console.log(newUser);
 _users.push(newUser);
-document.querySelector("#add-user").innerHTML="";
 appendPersons(_users);
+document.querySelector("#add-user").innerHTML+=`<span class="addText">added user</span>`;
+const time = () => {
+document.querySelector(".addText").style.display="none";
+}
+setTimeout(time,300);
 };

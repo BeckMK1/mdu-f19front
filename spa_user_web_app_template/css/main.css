@@ -139,3 +139,10 @@ padding: 19px 16px;
 background:var(--light-green) ;
 color:var(--text-color-light);
 }
+.form{
+position: relative;
+margin-top: 10px;
+width: 500px;
+left: 35%;
+
+}
