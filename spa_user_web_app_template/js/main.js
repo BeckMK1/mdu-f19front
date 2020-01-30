@@ -80,6 +80,7 @@ function appendPersons(persons) {
     //creating person data, HTML tags and adding to the DOM, the element #gridPersons
     document.querySelector("#grid-persons").innerHTML += `
       <article onclick="showDetailView(${index})">
+      <img src="${person.picture}">
         <h4>${person.name}</h4>
       </article>
       `;
@@ -92,8 +93,22 @@ appendPersons(_users);
 // Show the details view of the user
 function showDetailView(index){
   let selectedUser = _users[index];
+  document.querySelector("#detail-view").innerHTML =`
+  <header class="topbar"><h2>Detail view</h2></header>
+  <div class="profile">
+  <img src="${selectedUser.picture}">
+  <h4>${selectedUser.name}</h4>
+  <p>age: ${selectedUser.age}</p>
+  <p>street address: ${selectedUser.address}</p>
+  <p>city: ${selectedUser.city}</p>
+  <p>country: ${selectedUser.country}</p>
+  <p>gender:  ${selectedUser.gender}</p>
+ <p>Email: <a href="${selectedUser.email}">${selectedUser.email}</a></p>
+  <p>phone number: ${selectedUser.phone}</p>
+  </div>
+  `;
   console.log(selectedUser);
-  
+  navigateTo("detail-view");
   // todo: display user details
 
   // navigate to the detail view
