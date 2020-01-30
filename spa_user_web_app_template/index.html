@@ -15,6 +15,7 @@
   <!-- tabbar navigation -->
   <nav class="tabbar">
     <a href="#home">Home</a>
+     <a href="#add-user">add new user</a>
   </nav>
   <!-- pages -->
   <!-- home page -->
@@ -27,6 +28,15 @@
   <!-- detail view -->
   <section id="detail-view" class="page"></section>
   <!-- js files -->
+  
+  <section id="add-user" class="page">
+  <form id="addUser" class="form">
+  <input type="text" name="name" placeholder="NAME">
+  <input type="text" name="age" placeholder="AGE">
+  <input type="text" name="address" placeholder="ADDRESS">
+  <button type="button" name="button" onclick="createUser()">save</button>
+  </form>
+  </section>
   <script src="js/spa.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -1,5 +1,4 @@
 "use strict";
-
 let _users = [
   {
     name: "Megan Wong",
@@ -109,8 +108,24 @@ function showDetailView(index){
   `;
   console.log(selectedUser);
   navigateTo("detail-view");
+
   // todo: display user details
 
   // navigate to the detail view
   // navigateTo("detail-view");
 }
+function createUser(){
+  let name = document.querySelector('#addUser-form input [name=name]').value;
+  let age = document.querySelector('#addUser-form input [name=age]').value;
+  let address = document.querySelector('#addUser-form input [name=address]').value;
+
+let newUser = {
+name: name,
+age: age,
+address: address
+};
+console.log(newUser);
+_users.push(newUser);
+document.querySelector("#add-user").innerHTML="";
+appendPersons(_users);
+};

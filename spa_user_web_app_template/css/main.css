@@ -134,3 +134,8 @@ h1 {
 .profile{
 margin-top: 10px;
 }
+.button{
+padding: 19px 16px;
+background:var(--light-green) ;
+color:var(--text-color-light);
+}
